@@ -13,7 +13,6 @@ import {
     getModalFocusableData,
     isString,
     isObject,
-    isArray,
     fireEvent,
     getSvgIcon,
     handleFocusTrap,
