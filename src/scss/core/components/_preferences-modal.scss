@@ -200,6 +200,14 @@ $service-toggle-knob-icon-width: 1.7px;
     .pm__tabpanel-sections {
         display: flex;
         flex-direction: column;
+
+        /* Override first-child styling for sections inside tabs */
+        .pm__section:first-child {
+            padding: 1em;
+            margin-bottom: 0.5em;
+            margin-top: 0;
+            border: 1px solid var(--cc-separator-border-color);
+        }
     }
     /* END: Tab interface styles */
 
