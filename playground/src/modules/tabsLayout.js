@@ -1,6 +1,6 @@
 import { getState, reRunPlugin, saveState } from './stateManager';
 import { onEvent, customEvents, addEvent, getById } from './utils';
-import enTabs from '../translations/en-tabs.json';
+import enTabs from '../translations/en_tabs.json';
 import en from '../translations/en.json';
 
 const CHANGE_EVENT = 'change';
