@@ -5,11 +5,18 @@ import { readdirSync, writeFileSync } from 'fs';
  */
 let translations;
 
+/**
+ * Check if a filename represents a valid locale (exclude variant files like en_tabs)
+ * @param {string} filename
+ */
+const isValidLocale = (filename) => !filename.includes('_');
+
 export const getTranslationLocales = () => {
     if (!translations) {
         translations = readdirSync('./src/translations')
             .filter(isJson)
             .map(removeExtension)
+            .filter(isValidLocale)
     }
     return translations;
 }
