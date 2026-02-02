@@ -13,6 +13,11 @@ export const defaultState = {
     _disableTransitions: false,
 
     /**
+     * Enable tabbed layout for preferences modal
+     */
+    _useTabsLayout: false,
+
+    /**
      * @type {'default-light' | 'cc--darkmode' | 'dark-turquoise' | 'light-funky' | 'elegant-black'}
      */
     _theme: 'cc--darkmode',
@@ -30,7 +35,7 @@ export const defaultState = {
     /**
      * Increase on every new playground update
      */
-    _demoRevision: 34
+    _demoRevision: 35
 };
 
 /**
@@ -159,19 +164,38 @@ export const getCurrentUserConfig = (state) => {
             const preferencesModal = translation.preferencesModal;
 
             /**
-             * Remove all sections with a 'linkedCategory' that is not selected by the user
+             * Handle tabsConfig if present (tabs layout mode)
              */
-            const filteredSections = preferencesModal.sections.filter(section => {
+            if (preferencesModal.tabsConfig && preferencesModal.tabsConfig.tabs) {
+                preferencesModal.tabsConfig.tabs = preferencesModal.tabsConfig.tabs.map(tab => {
+                    if (tab.sections) {
+                        tab.sections = tab.sections.filter(section => {
+                            delete section.cookieTable;
+                            return !section.linkedCategory
+                                || state._enabledCategories.includes(section.linkedCategory);
+                        });
+                    }
+                    return tab;
+                }).filter(tab => tab.sections && tab.sections.length > 0);
+
+                // Remove sections when using tabs
+                delete preferencesModal.sections;
+            } else if (preferencesModal.sections) {
                 /**
-                 * TODO: cookieTable not implemented
+                 * Remove all sections with a 'linkedCategory' that is not selected by the user
                  */
-                delete section.cookieTable;
+                const filteredSections = preferencesModal.sections.filter(section => {
+                    /**
+                     * TODO: cookieTable not implemented
+                     */
+                    delete section.cookieTable;
 
-                return !section.linkedCategory
-                    || state._enabledCategories.includes(section.linkedCategory);
-            });
+                    return !section.linkedCategory
+                        || state._enabledCategories.includes(section.linkedCategory);
+                });
 
-            preferencesModal.sections = filteredSections;
+                preferencesModal.sections = filteredSections;
+            }
         }
     }
 

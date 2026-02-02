@@ -1,0 +1,116 @@
+{
+    "consentModal": {
+        "label": "Cookie consent",
+        "title": "Hello traveller, it's cookie time!",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+        "acceptAllBtn": "Accept all",
+        "acceptNecessaryBtn": "Reject all",
+        "showPreferencesBtn": "Manage preferences",
+        "footer": "<a href=\"#link\">Privacy Policy</a>\n<a href=\"#link\">Terms and conditions</a>"
+    },
+    "preferencesModal": {
+        "title": "Consent Preferences Center",
+        "acceptAllBtn": "Accept all",
+        "acceptNecessaryBtn": "Reject all",
+        "savePreferencesBtn": "Save preferences",
+        "closeIconLabel": "Close modal",
+        "serviceCounterLabel": "Service|Services",
+        "tabsConfig": {
+            "ariaLabel": "Consent preference categories",
+            "tabs": [
+                {
+                    "id": "purposes",
+                    "label": "Purposes",
+                    "sections": [
+                        {
+                            "title": "Cookie Usage",
+                            "description": "We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, and personalize content. Below you can manage your preferences for different purposes."
+                        },
+                        {
+                            "title": "Strictly Necessary <span class=\"pm__badge\">Always Enabled</span>",
+                            "description": "These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website.",
+                            "linkedCategory": "necessary"
+                        },
+                        {
+                            "title": "Functionality",
+                            "description": "These cookies enable enhanced functionality and personalization, such as remembering your preferences and settings.",
+                            "linkedCategory": "functionality"
+                        },
+                        {
+                            "title": "Analytics",
+                            "description": "These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.",
+                            "linkedCategory": "analytics"
+                        },
+                        {
+                            "title": "Marketing",
+                            "description": "These cookies are used to track visitors across websites to display relevant advertisements.",
+                            "linkedCategory": "marketing"
+                        }
+                    ]
+                },
+                {
+                    "id": "tcf-vendors",
+                    "label": "TCF Vendors",
+                    "sections": [
+                        {
+                            "title": "IAB TCF Vendors",
+                            "description": "The following vendors comply with the IAB Transparency and Consent Framework (TCF). These vendors process your personal data based on your consent choices."
+                        },
+                        {
+                            "title": "Google LLC",
+                            "description": "Processes data for advertising, analytics, and personalization purposes. <a href=\"https://policies.google.com/privacy\" target=\"_blank\">Privacy Policy</a>"
+                        },
+                        {
+                            "title": "Meta Platforms, Inc.",
+                            "description": "Processes data for social media advertising and analytics. <a href=\"https://www.facebook.com/privacy/policy\" target=\"_blank\">Privacy Policy</a>"
+                        },
+                        {
+                            "title": "Amazon Advertising",
+                            "description": "Processes data for advertising measurement and targeting. <a href=\"https://www.amazon.com/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ\" target=\"_blank\">Privacy Policy</a>"
+                        }
+                    ]
+                },
+                {
+                    "id": "google-vendors",
+                    "label": "Google Vendors",
+                    "sections": [
+                        {
+                            "title": "Google Additional Consent Vendors",
+                            "description": "These vendors are part of Google's Additional Consent mode and operate outside the standard IAB TCF framework."
+                        },
+                        {
+                            "title": "Google Analytics",
+                            "description": "Collects anonymous statistics about how visitors use the website, including page views, session duration, and traffic sources."
+                        },
+                        {
+                            "title": "Google Ads",
+                            "description": "Enables display of personalized advertisements and remarketing campaigns based on your browsing activity."
+                        },
+                        {
+                            "title": "Google Tag Manager",
+                            "description": "A tag management system that allows marketing and analytics tags to be deployed and managed from a single interface."
+                        }
+                    ]
+                },
+                {
+                    "id": "more-info",
+                    "label": "More Info",
+                    "sections": [
+                        {
+                            "title": "About This Tool",
+                            "description": "This consent management tool allows you to control which cookies and tracking technologies are used on our website. Your choices will be saved and respected on future visits."
+                        },
+                        {
+                            "title": "Your Rights",
+                            "description": "Under GDPR and other privacy regulations, you have the right to access, rectify, delete, and port your personal data. You can also object to or restrict certain processing activities."
+                        },
+                        {
+                            "title": "Contact Us",
+                            "description": "For any query in relation to our cookie policy and your choices, please <a class=\"cc__link\" href=\"#yourdomain.com\">contact us</a>."
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -367,6 +367,35 @@ declare namespace CookieConsent {
         cookieTable?: CookieTable
     }
 
+    interface TabSection {
+        /**
+         * Unique identifier for the tab.
+         */
+        id: string
+
+        /**
+         * Tab label displayed in the tab button.
+         */
+        label: string
+
+        /**
+         * Sections to display within this tab.
+         */
+        sections: Section[]
+    }
+
+    interface TabsConfig {
+        /**
+         * Accessibility label for the tab list container.
+         */
+        ariaLabel?: string
+
+        /**
+         * Array of tab configurations.
+         */
+        tabs: TabSection[]
+    }
+
     interface PreferencesModalOptions {
         title?: string
         acceptAllBtn?: string
@@ -383,7 +412,16 @@ declare namespace CookieConsent {
          */
         serviceCounterLabel?: string
 
-        sections: Section[]
+        /**
+         * Array of sections. Use this for a simple layout without tabs.
+         */
+        sections?: Section[]
+
+        /**
+         * Tab-based layout configuration. When provided, sections are organized into tabs.
+         * This is useful for displaying purposes, TCF vendors, Google vendors, etc.
+         */
+        tabsConfig?: TabsConfig
     }
 
     interface Translation {
