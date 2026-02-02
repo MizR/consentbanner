@@ -101,6 +101,108 @@ $service-toggle-knob-icon-width: 1.7px;
         overflow-y: overlay;
     }
 
+    /* START: Tab interface styles */
+    .pm__body--tabs {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .pm__tablist-wrapper {
+        border-bottom: 1px solid var(--cc-separator-border-color);
+        background: var(--cc-bg);
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        padding: 0 $padding-x;
+    }
+
+    .pm__tablist {
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+        scrollbar-width: thin;
+
+        &::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--cc-separator-border-color);
+            border-radius: 4px;
+        }
+    }
+
+    .pm__tab {
+        flex: none;
+        padding: 0.875em 1.25em;
+        background: transparent;
+        border: none;
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        font-weight: $font-weight-bold;
+        font-size: 0.9em;
+        color: var(--cc-secondary-color);
+        white-space: nowrap;
+        transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+        position: relative;
+
+        &:hover {
+            color: var(--cc-primary-color);
+            background: var(--cc-cookie-category-block-bg);
+        }
+
+        &:focus {
+            outline: 2px solid var(--cc-btn-primary-bg);
+            outline-offset: -2px;
+        }
+
+        &:focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--cc-btn-primary-bg);
+            outline-offset: -2px;
+        }
+
+        &--active,
+        &[aria-selected="true"] {
+            color: var(--cc-btn-primary-bg);
+            border-bottom-color: var(--cc-btn-primary-bg);
+        }
+    }
+
+    .pm__tabpanels {
+        flex: 1;
+        overflow-y: auto;
+        overflow-y: overlay;
+    }
+
+    .pm__tabpanel {
+        padding: $padding-y $padding-x;
+
+        &--hidden,
+        &[aria-hidden="true"] {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid var(--cc-btn-primary-bg);
+            outline-offset: -4px;
+        }
+    }
+
+    .pm__tabpanel-sections {
+        display: flex;
+        flex-direction: column;
+    }
+    /* END: Tab interface styles */
+
     .pm__section,
     .pm__section--toggle{
         display: flex;
@@ -811,6 +913,10 @@ $service-toggle-knob-icon-width: 1.7px;
 /* Start: fix RTL layout */
 #cc-main.cc--rtl {
 
+    .pm__tablist {
+        direction: rtl;
+    }
+
     .pm__service-header {
         margin-right: 0;
         margin-left: 1em;
@@ -925,6 +1031,24 @@ $service-toggle-knob-icon-width: 1.7px;
         .pm__body,
         .pm__footer{
             padding: .9em!important;
+        }
+
+        /* Tab styles for mobile */
+        .pm__body--tabs {
+            padding: 0!important;
+        }
+
+        .pm__tablist-wrapper {
+            padding: 0 .9em;
+        }
+
+        .pm__tab {
+            padding: 0.75em 1em;
+            font-size: 0.85em;
+        }
+
+        .pm__tabpanel {
+            padding: .9em;
         }
 
         .pm__badge{
